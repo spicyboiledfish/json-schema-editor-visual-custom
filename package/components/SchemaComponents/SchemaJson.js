@@ -164,7 +164,7 @@ class SchemaArray extends PureComponent {
                 <Col span={8} className="col-item col-item-mock">
                     <Input
                         placeholder={LocaleProvider('cnname')}
-                        value={value.cnname}
+                        value={items.cnname}
                         onChange={this.handleCNname}
                     />
                 </Col>
