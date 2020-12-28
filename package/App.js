@@ -391,7 +391,7 @@ class jsonSchema extends React.Component {
                       </span>
                     ) : null}
                   </Col>
-                  <Col span={14}>
+                  <Col span={22}>
                     <Input
                       addonAfter={
                         <Tooltip placement="top" title={'checked_all'}>
@@ -404,13 +404,6 @@ class jsonSchema extends React.Component {
                       }
                       disabled
                       value="root"
-                    />
-                  </Col>
-                  <Col span={8} className="col-item col-item-mock">
-                    <Input
-                        placeholder={LocalProvider('cnname')}
-                        value={schema.cnname}
-                        onChange={e => this.changeValue(['cnname'], e.target.value)}
                     />
                   </Col>
                 </Row>
@@ -441,29 +434,29 @@ class jsonSchema extends React.Component {
               )}
               <Col span={this.props.isMock ? 4 : 5} className="col-item col-item-mock">
                 <Input
-                  addonAfter={
-                    <EditOutlined
-                      type="edit"
-                      onClick={() =>
-                        this.showEdit([], 'title', this.props.schema.title)
-                      }
-                    />
-                  }
-                  placeholder={LocalProvider('Title')}
+                //   addonAfter={
+                //     <EditOutlined
+                //       type="edit"
+                //       onClick={() =>
+                //         this.showEdit([], 'title', this.props.schema.title)
+                //       }
+                //     />
+                //   }
+                  placeholder={LocalProvider('cnname')}
                   value={this.props.schema.title}
                   onChange={e => this.changeValue(['title'], e.target.value)}
                 />
               </Col>
               <Col span={this.props.isMock ? 4 : 5} className="col-item col-item-desc">
                 <Input
-                  addonAfter={
-                    <EditOutlined
-                      type="edit"
-                      onClick={() =>
-                        this.showEdit([], 'description', this.props.schema.description)
-                      }
-                    />
-                  }
+                //   addonAfter={
+                //     <EditOutlined
+                //       type="edit"
+                //       onClick={() =>
+                //         this.showEdit([], 'description', this.props.schema.description)
+                //       }
+                //     />
+                //   }
                   placeholder={LocalProvider('description')}
                   value={schema.description}
                   onChange={e => this.changeValue(['description'], e.target.value)}
