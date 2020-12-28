@@ -9,14 +9,42 @@ npm install json-schema-editor-visual-custom
 ```
 
 ```js
-const option = {}
 import 'antd/dist/antd.css'
 require('json-schema-editor-visual-custom/dist/main.css')
 const schemaEditor = require("json-schema-editor-visual-custom/dist/main.js");
-const SchemaEditor = schemaEditor(option)
+const SchemaEditor = schemaEditor({ lang: 'zh_CN'})
+const defaultSchema = {
+    type: 'object',
+    title: 'title',
+    cnname: '根节点',
+    properties: {
+      field_1: {
+        type: 'string',
+        title: 'aaa',
+        description: 'fffff',
+        default: "1",
+        cnname: '属性1'
+      },
+      field_2: {
+        type: 'string',
+        title: 'bbb',
+        description: 'fffff222',
+        default: "2",
+        cnname: '属性2'
+      },
+    },
+    required: ['field_1', 'field_2'],
+};
+
+schemaChange = (e: any) => {
+  console.log('schema变化', e);
+};
 
 render(
-    <SchemaEditor />,
+    <SchemaEditor 
+        onChange={schemaChange}
+        data={JSON.stringify(defaultSchema)}
+    />,
   document.getElementById('root')
 )
 ```
