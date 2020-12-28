@@ -5,14 +5,14 @@ A json-schema editor of high efficient and easy-to-use, base on React.
 
 ## Usage
 ```
-npm install json-schema-editor-visual
+npm install json-schema-editor-visual-custom
 ```
 
 ```js
 const option = {}
 import 'antd/dist/antd.css'
-require('json-schema-editor-visual/dist/main.css')
-const schemaEditor = require("json-schema-editor-visual/dist/main.js");
+require('json-schema-editor-visual-custom/dist/main.css')
+const schemaEditor = require("json-schema-editor-visual-custom/dist/main.js");
 const SchemaEditor = schemaEditor(option)
 
 render(
