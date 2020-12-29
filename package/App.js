@@ -394,7 +394,7 @@ class jsonSchema extends React.Component {
                   <Col span={22}>
                     <Input
                       addonAfter={
-                        <Tooltip placement="top" title={'checked_all'}>
+                        <Tooltip placement="top" title={LocalProvider('checked_all')}>
                           <Checkbox
                             checked={checked}
                             disabled={disabled}

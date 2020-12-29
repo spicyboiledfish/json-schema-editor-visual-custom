@@ -260,7 +260,7 @@ class SchemaItem extends PureComponent {
     let value = e.target.value;
 
     if (data.properties[value] && typeof data.properties[value] === 'object') {
-      return message.error(`The field "${value}" already exists.`);
+      return message.error(`当前属性 "${value}" 已存在.`);
     }
 
     this.Model.changeNameAction({ value, prefix, name });
