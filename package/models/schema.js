@@ -154,14 +154,18 @@ export default {
     if (!name) {
       newPropertiesData = Object.assign({}, propertiesData);
       let ranName = 'field_' + fieldNum++;
+      let titleName = '属性名_' + fieldNum++;
       newPropertiesData[ranName] = utils.defaultSchema.string;
+      newPropertiesData[ranName][title] = titleName;
       requiredData.push(ranName);
     } else {
       for (let i in propertiesData) {
         newPropertiesData[i] = propertiesData[i];
         if (i === name) {
           let ranName = 'field_' + fieldNum++;
+          let titleName = '属性名_' + fieldNum++;
           newPropertiesData[ranName] = utils.defaultSchema.string;
+          newPropertiesData[ranName][title] = titleName;
           requiredData.push(ranName);
         }
       }
@@ -179,7 +183,9 @@ export default {
 
     newPropertiesData = Object.assign({}, propertiesData);
     let ranName = 'field_' + fieldNum++;
+    let titleName = '属性名_' + fieldNum++;
     newPropertiesData[ranName] = utils.defaultSchema.string;
+    newPropertiesData[ranName][title] = titleName;
     utils.setData(state.data, keys, newPropertiesData);
 
     // add required
