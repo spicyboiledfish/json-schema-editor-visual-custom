@@ -157,7 +157,11 @@ export default {
       const ranNumber = fieldNum++;
       let ranName = 'field_' + ranNumber;
       console.log('1', ranNumber);
-      newPropertiesData[ranName] = _.cloneDeep(Object.assign(utils.defaultSchema.string, {title: '属性名_' + ranNumber}))
+      newPropertiesData = {
+          type:'string',
+          title: '属性名_' + ranNumber
+      }
+    //   newPropertiesData[ranName] = _.cloneDeep(Object.assign(utils.defaultSchema.string, {title: '属性名_' + ranNumber}))
       requiredData.push(ranName);
     } else {
       for (let i in propertiesData) {
@@ -167,7 +171,10 @@ export default {
           console.log('2', ranNumber);
           let ranName = 'field_' + ranNumber;
         //   newPropertiesData[ranName] = utils.defaultSchema.string;
-          newPropertiesData[ranName] = _.cloneDeep(Object.assign(utils.defaultSchema.string, {title: '属性名_' + ranNumber}))
+            newPropertiesData = {
+                type:'string',
+                title: '属性名_' + ranNumber
+            }
           requiredData.push(ranName);
         }
       }
@@ -187,8 +194,11 @@ export default {
     const ranNumber = fieldNum++;
     console.log('3', ranNumber);
     let ranName = 'field_' + ranNumber;
+    newPropertiesData = {
+        type:'string',
+        title: '属性名_' + ranNumber
+    }
     // newPropertiesData[ranName] = utils.defaultSchema.string;
-    newPropertiesData[ranName] = _.cloneDeep(Object.assign(utils.defaultSchema.string, {title: '属性名_' + ranNumber}))
     utils.setData(state.data, keys, newPropertiesData);
 
     // add required
