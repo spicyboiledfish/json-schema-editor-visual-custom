@@ -1,6 +1,7 @@
 const _ = require('underscore');
 import utils from '../utils';
 let fieldNum = 1;
+let fieldCnNum = 1;
 import handleSchema from '../schema.js';
 
 export default {
@@ -154,7 +155,7 @@ export default {
     if (!name) {
       newPropertiesData = Object.assign({}, propertiesData);
       let ranName = 'field_' + fieldNum++;
-      let titleName = '属性名_' + fieldNum++;
+      let titleName = '属性名_' + fieldCnNum++;
       newPropertiesData[ranName] = utils.defaultSchema.string;
       newPropertiesData[ranName].title = titleName;
       requiredData.push(ranName);
@@ -163,7 +164,7 @@ export default {
         newPropertiesData[i] = propertiesData[i];
         if (i === name) {
           let ranName = 'field_' + fieldNum++;
-          let titleName = '属性名_' + fieldNum++;
+          let titleName = '属性名_' + fieldCnNum++;
           newPropertiesData[ranName] = utils.defaultSchema.string;
           newPropertiesData[ranName].title = titleName;
           requiredData.push(ranName);
@@ -183,7 +184,7 @@ export default {
 
     newPropertiesData = Object.assign({}, propertiesData);
     let ranName = 'field_' + fieldNum++;
-    let titleName = '属性名_' + fieldNum++;
+    let titleName = '属性名_' + fieldCnNum++;
     newPropertiesData[ranName] = utils.defaultSchema.string;
     newPropertiesData[ranName].title = titleName;
     utils.setData(state.data, keys, newPropertiesData);
