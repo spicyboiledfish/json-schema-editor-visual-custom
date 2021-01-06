@@ -156,7 +156,7 @@ export default {
       let ranName = 'field_' + fieldNum++;
       let titleName = '属性名_' + fieldNum++;
       newPropertiesData[ranName] = utils.defaultSchema.string;
-      newPropertiesData[ranName][title] = titleName;
+      newPropertiesData[ranName].title = titleName;
       requiredData.push(ranName);
     } else {
       for (let i in propertiesData) {
@@ -165,7 +165,7 @@ export default {
           let ranName = 'field_' + fieldNum++;
           let titleName = '属性名_' + fieldNum++;
           newPropertiesData[ranName] = utils.defaultSchema.string;
-          newPropertiesData[ranName][title] = titleName;
+          newPropertiesData[ranName].title = titleName;
           requiredData.push(ranName);
         }
       }
@@ -185,7 +185,7 @@ export default {
     let ranName = 'field_' + fieldNum++;
     let titleName = '属性名_' + fieldNum++;
     newPropertiesData[ranName] = utils.defaultSchema.string;
-    newPropertiesData[ranName][title] = titleName;
+    newPropertiesData[ranName].title = titleName;
     utils.setData(state.data, keys, newPropertiesData);
 
     // add required
