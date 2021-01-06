@@ -333,6 +333,7 @@ class SchemaItem extends PureComponent {
   //  增加子节点
   handleAddField = () => {
     const { prefix, name } = this.props;
+    console.log('prefix', prefix, name);
     this.Model.addFieldAction({ prefix, name });
   };
 

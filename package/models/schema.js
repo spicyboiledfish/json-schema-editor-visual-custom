@@ -151,14 +151,13 @@ export default {
     let parentKeys = utils.getParentKeys(keys);
     let parentData = utils.getData(oldData, parentKeys);
     let requiredData = [].concat(parentData.required || []);
-
+    console.log('name', name);
     if (!name) {
       newPropertiesData = Object.assign({}, propertiesData);
       const ranNumber = fieldNum++;
       let ranName = 'field_' + ranNumber;
       console.log('1', ranNumber);
-      newPropertiesData[ranName] = utils.defaultSchema.string;
-      newPropertiesData[ranName].title = '属性名_' + ranNumber;
+      newPropertiesData[ranName] = Object.merge(utils.defaultSchema.string, {title: '属性名_' + ranNumber})
       requiredData.push(ranName);
     } else {
       for (let i in propertiesData) {
@@ -167,8 +166,8 @@ export default {
           const ranNumber = fieldNum++;
           console.log('2', ranNumber);
           let ranName = 'field_' + ranNumber;
-          newPropertiesData[ranName] = utils.defaultSchema.string;
-          newPropertiesData[ranName].title = '属性名_' + ranNumber;
+        //   newPropertiesData[ranName] = utils.defaultSchema.string;
+          newPropertiesData[ranName] = Object.merge(utils.defaultSchema.string, {title: '属性名_' + ranNumber})
           requiredData.push(ranName);
         }
       }
@@ -188,8 +187,8 @@ export default {
     const ranNumber = fieldNum++;
     console.log('3', ranNumber);
     let ranName = 'field_' + ranNumber;
-    newPropertiesData[ranName] = utils.defaultSchema.string;
-    newPropertiesData[ranName].title = '属性名_' + ranNumber;
+    // newPropertiesData[ranName] = utils.defaultSchema.string;
+    newPropertiesData[ranName] = Object.merge(utils.defaultSchema.string, {title: '属性名_' + ranNumber})
     utils.setData(state.data, keys, newPropertiesData);
 
     // add required
