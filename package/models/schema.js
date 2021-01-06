@@ -154,19 +154,21 @@ export default {
 
     if (!name) {
       newPropertiesData = Object.assign({}, propertiesData);
-      let ranName = 'field_' + fieldNum++;
-      let titleName = '属性名_' + fieldCnNum++;
+      const ranNumber = fieldNum++;
+      let ranName = 'field_' + ranNumber;
+      console.log('1', ranNumber);
       newPropertiesData[ranName] = utils.defaultSchema.string;
-      newPropertiesData[ranName].title = titleName;
+      newPropertiesData[ranName].title = '属性名_' + ranNumber;
       requiredData.push(ranName);
     } else {
       for (let i in propertiesData) {
         newPropertiesData[i] = propertiesData[i];
         if (i === name) {
-          let ranName = 'field_' + fieldNum++;
-          let titleName = '属性名_' + fieldCnNum++;
+          const ranNumber = fieldNum++;
+          console.log('2', ranNumber);
+          let ranName = 'field_' + ranNumber;
           newPropertiesData[ranName] = utils.defaultSchema.string;
-          newPropertiesData[ranName].title = titleName;
+          newPropertiesData[ranName].title = '属性名_' + ranNumber;
           requiredData.push(ranName);
         }
       }
@@ -183,10 +185,11 @@ export default {
     let newPropertiesData = {};
 
     newPropertiesData = Object.assign({}, propertiesData);
-    let ranName = 'field_' + fieldNum++;
-    let titleName = '属性名_' + fieldCnNum++;
+    const ranNumber = fieldNum++;
+    console.log('3', ranNumber);
+    let ranName = 'field_' + ranNumber;
     newPropertiesData[ranName] = utils.defaultSchema.string;
-    newPropertiesData[ranName].title = titleName;
+    newPropertiesData[ranName].title = '属性名_' + ranNumber;
     utils.setData(state.data, keys, newPropertiesData);
 
     // add required
