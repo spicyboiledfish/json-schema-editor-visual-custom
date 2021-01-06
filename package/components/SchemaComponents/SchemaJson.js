@@ -258,9 +258,7 @@ class SchemaItem extends PureComponent {
   handleChangeName = e => {
     const { data, prefix, name } = this.props;
     let value = e.target.value;
-    console.log('value', value);
     if (value === '') {
-        console.log('进来了吗');
         return message.error(`当前属性名不可为空`);
     }
 

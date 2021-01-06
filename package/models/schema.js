@@ -23,7 +23,6 @@ export default {
   },
 
   changeNameAction: function(state, action, oldState) {
-    console.log('这里看', state, action, oldState )
     const keys = action.prefix;
     const name = action.name;
     const value = action.value;
