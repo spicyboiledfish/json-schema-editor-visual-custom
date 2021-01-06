@@ -258,9 +258,12 @@ class SchemaItem extends PureComponent {
   handleChangeName = e => {
     const { data, prefix, name } = this.props;
     let value = e.target.value;
+    if (value === '') {
+        return message.error(`当前属性名不可为空`);
+    }
 
     if (data.properties[value] && typeof data.properties[value] === 'object') {
-      return message.error(`当前属性 "${value}" 已存在.`);
+      return message.error(`当前属性 "${value}" 已存在`);
     }
 
     this.Model.changeNameAction({ value, prefix, name });
