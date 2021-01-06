@@ -1,6 +1,6 @@
 {
   "name": "json-schema-editor-visual-custom",
-  "version": "2.1.1-beta01",
+  "version": "2.1.1-beta02",
   "description": "jsonschema editor",
   "main": "package/index.js",
   "license": "MIC",
