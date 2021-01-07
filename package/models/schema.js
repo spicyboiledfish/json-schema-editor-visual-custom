@@ -85,7 +85,15 @@ export default {
     }
     // let newParentData = utils.defaultSchema[value];
     // let newParentDataItem = Object.assign({ title: '属性名_' + })
-    let newParentDataItem = utils.defaultSchema[value];
+    let newParentDataItem = 
+    value === 'array' ? 
+    {
+        type: 'array',
+        items: {
+            type: 'string',
+            title: '属性名_' + fieldNum++
+        }
+    } : utils.defaultSchema[value];
 
     // 将备注过滤出来
     let parentDataItem = parentData.description ? { description: parentData.description } : {};
