@@ -321,6 +321,15 @@ class SchemaItem extends PureComponent {
     this.Model.changeValueAction({ key, value });
   }
 
+  filterDuplicate = (obj, value) => {
+    for (let key in obj) {
+       if (obj[key].title === value) {
+           return true;
+       }
+    }
+    return false;
+ }
+
   handleCNname = e => {
     let prefix = this.getPrefix();
     let key = [].concat(prefix, `cnname`);
