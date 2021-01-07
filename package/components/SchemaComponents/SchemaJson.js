@@ -104,6 +104,7 @@ class SchemaArray extends PureComponent {
     let key = [].concat(prefix, `title`);
     let value = e.target.value;
     console.log('更改title', key, value);
+    console.log('this.props2222', this.props.data);
     if (value === '') {
         return message.error(`当前属性中文名不可为空`);
     }
@@ -297,6 +298,7 @@ class SchemaItem extends PureComponent {
     if (value === '') {
         return message.error(`当前属性中文名不可为空`);
     }
+    console.log('this.props111', this.props.data);
     this.Model.changeValueAction({ key, value });
   }
 
