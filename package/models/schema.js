@@ -79,7 +79,7 @@ export default {
     let parentKeys = utils.getParentKeys(keys);
     let oldData = oldState.data;
     let parentData = utils.getData(oldData, parentKeys);
-    console.log('parentData', parentData);
+    console.log('parentData', parentData)
     if (parentData.type === value) {
       return;
     }
@@ -89,7 +89,8 @@ export default {
 
     // 将备注过滤出来
     let parentDataItem = parentData.description ? { description: parentData.description } : {};
-    let newParentData = Object.assign({}, newParentDataItem, parentDataItem);
+    let parentTitleItem = parentData.title ? { title: parentData.title } : {};
+    let newParentData = Object.assign({}, newParentDataItem, parentDataItem, parentTitleItem);
 
     let newKeys = [].concat('data', parentKeys);
     utils.setData(state, newKeys, newParentData);
