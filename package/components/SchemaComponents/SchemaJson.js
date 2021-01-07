@@ -109,8 +109,8 @@ class SchemaArray extends PureComponent {
     if (value === '') {
         return message.error(`当前属性中文名不可为空`);
     }
-    console.log('查看是否重复22222', filterDuplicate(properties, value));
-    if (filterDuplicate(properties, value)) {
+    console.log('查看是否重复22222', this.filterDuplicate(properties, value));
+    if (this.filterDuplicate(properties, value)) {
         return message.error(`当前属性中文名 "${value}" 已存在`);
     }
     this.Model.changeValueAction({ key, value });
@@ -312,8 +312,8 @@ class SchemaItem extends PureComponent {
     if (value === '') {
         return message.error(`当前属性中文名不可为空`);
     }
-    console.log('查看是否重复1111', filterDuplicate(properties, value));
-    if (filterDuplicate(properties, value)) {
+    console.log('查看是否重复1111', this.filterDuplicate(properties, value));
+    if (this.filterDuplicate(properties, value)) {
         return message.error(`当前属性中文名 "${value}" 已存在`);
     }
     console.log('this.props111', this.props.data);
