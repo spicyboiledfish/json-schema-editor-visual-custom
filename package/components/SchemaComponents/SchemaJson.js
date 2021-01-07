@@ -99,16 +99,30 @@ class SchemaArray extends PureComponent {
     this.Model.changeValueAction({ key, value });
   };
 
-  handleChangeTitle = e =>{
+  handleChangeTitle = e => {
     let prefix = this.getPrefix();
     let key = [].concat(prefix, `title`);
     let value = e.target.value;
     console.log('更改title', key, value);
     console.log('this.props2222', this.props.data);
+    const { properties } = this.props.data;
     if (value === '') {
         return message.error(`当前属性中文名不可为空`);
     }
+    console.log('查看是否重复22222', filterDuplicate(properties, value));
+    if (filterDuplicate(properties, value)) {
+        return message.error(`当前属性中文名 "${value}" 已存在`);
+    }
     this.Model.changeValueAction({ key, value });
+  }
+
+  filterDuplicate = (obj, value) => {
+     for (let key in obj) {
+        if (obj[key].title === value) {
+            return true;
+        }
+     }
+     return false;
   }
 
   // 增加子节点
@@ -297,6 +311,10 @@ class SchemaItem extends PureComponent {
     console.log('更改title2', key, value);
     if (value === '') {
         return message.error(`当前属性中文名不可为空`);
+    }
+    console.log('查看是否重复1111', filterDuplicate(properties, value));
+    if (filterDuplicate(properties, value)) {
+        return message.error(`当前属性中文名 "${value}" 已存在`);
     }
     console.log('this.props111', this.props.data);
     this.Model.changeValueAction({ key, value });
