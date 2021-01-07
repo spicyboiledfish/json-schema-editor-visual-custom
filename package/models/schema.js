@@ -72,19 +72,15 @@ export default {
   },
 
   changeTypeAction: function(state, action, oldState) {
-    console.log('>>>>嘻嘻嘻', state, action, oldState);
     const keys = action.key;
     const value = action.value;
 
     let parentKeys = utils.getParentKeys(keys);
     let oldData = oldState.data;
     let parentData = utils.getData(oldData, parentKeys);
-    console.log('parentData', parentData)
     if (parentData.type === value) {
       return;
     }
-    // let newParentData = utils.defaultSchema[value];
-    // let newParentDataItem = Object.assign({ title: '属性名_' + })
     let newParentDataItem = 
     value === 'array' ? 
     {
@@ -162,12 +158,10 @@ export default {
     let parentKeys = utils.getParentKeys(keys);
     let parentData = utils.getData(oldData, parentKeys);
     let requiredData = [].concat(parentData.required || []);
-    console.log('name', name);
     if (!name) {
       newPropertiesData = Object.assign({}, propertiesData);
       const ranNumber = fieldNum++;
       let ranName = 'field_' + ranNumber;
-      console.log('1', ranNumber);
       newPropertiesData[ranName] = {
         type: 'string',
         title: '属性名_' + ranNumber
@@ -178,7 +172,6 @@ export default {
         newPropertiesData[i] = propertiesData[i];
         if (i === name) {
           const ranNumber = fieldNum++;
-          console.log('2', ranNumber);
           let ranName = 'field_' + ranNumber;
           newPropertiesData[ranName] = {
             type: 'string',
@@ -201,7 +194,6 @@ export default {
 
     newPropertiesData = Object.assign({}, propertiesData);
     const ranNumber = fieldNum++;
-    console.log('3', ranNumber);
     let ranName = 'field_' + ranNumber;
     newPropertiesData[ranName] = {
         type: 'string',
