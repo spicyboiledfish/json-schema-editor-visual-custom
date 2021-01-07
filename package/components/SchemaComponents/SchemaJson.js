@@ -308,6 +308,7 @@ class SchemaItem extends PureComponent {
     let prefix = this.getPrefix();
     let key = [].concat(prefix, `title`);
     let value = e.target.value;
+    const { properties } = this.props.data;
     console.log('更改title2', key, value);
     if (value === '') {
         return message.error(`当前属性中文名不可为空`);
