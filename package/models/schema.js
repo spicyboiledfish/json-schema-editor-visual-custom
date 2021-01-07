@@ -1,7 +1,6 @@
 const _ = require('underscore');
 import utils from '../utils';
 let fieldNum = 1;
-let fieldCnNum = 1;
 import handleSchema from '../schema.js';
 
 export default {
@@ -73,16 +72,19 @@ export default {
   },
 
   changeTypeAction: function(state, action, oldState) {
+    console.log('>>>>嘻嘻嘻', state, action, oldState);
     const keys = action.key;
     const value = action.value;
 
     let parentKeys = utils.getParentKeys(keys);
     let oldData = oldState.data;
     let parentData = utils.getData(oldData, parentKeys);
+    console.log('parentData', parentData);
     if (parentData.type === value) {
       return;
     }
     // let newParentData = utils.defaultSchema[value];
+    // let newParentDataItem = Object.assign({ title: '属性名_' + })
     let newParentDataItem = utils.defaultSchema[value];
 
     // 将备注过滤出来
@@ -161,8 +163,6 @@ export default {
         type: 'string',
         title: '属性名_' + ranNumber
       }
-    //   newPropertiesData[ranName] = utils.defaultSchema.string;
-    //   newPropertiesData[ranName].title = '属性名_' + ranNumber;
       requiredData.push(ranName);
     } else {
       for (let i in propertiesData) {
@@ -175,8 +175,6 @@ export default {
             type: 'string',
             title: '属性名_' + ranNumber
           }
-        //   newPropertiesData[ranName] = utils.defaultSchema.string;
-        //   newPropertiesData[ranName].title = '属性名_' + ranNumber;
           requiredData.push(ranName);
         }
       }
@@ -200,8 +198,6 @@ export default {
         type: 'string',
         title: '属性名_' + ranNumber
     }
-    // newPropertiesData[ranName] = utils.defaultSchema.string;
-    // newPropertiesData[ranName].title = '属性名_' + ranNumber;
     utils.setData(state.data, keys, newPropertiesData);
 
     // add required
