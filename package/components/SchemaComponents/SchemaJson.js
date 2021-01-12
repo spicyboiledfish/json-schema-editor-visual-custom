@@ -104,9 +104,9 @@ class SchemaArray extends PureComponent {
     let key = [].concat(prefix, `title`);
     let value = e.target.value;
     const { properties } = this.props.data;
-    if (value === '') {
-        return message.error(`当前属性中文名不可为空`);
-    }
+    // if (value === '') {
+    //     return message.error(`当前属性中文名不可为空`);
+    // }
     if (this.filterDuplicate(properties, value)) {
         return message.error(`当前属性中文名 "${value}" 已存在`);
     }
@@ -306,9 +306,9 @@ class SchemaItem extends PureComponent {
     let key = [].concat(prefix, `title`);
     let value = e.target.value;
     const { properties } = this.props.data;
-    if (value === '') {
-        return message.error(`当前属性中文名不可为空`);
-    }
+    // if (value === '') {
+    //     return message.error(`当前属性中文名不可为空`);
+    // }
     if (this.filterDuplicate(properties, value)) {
         return message.error(`当前属性中文名 "${value}" 已存在`);
     }
