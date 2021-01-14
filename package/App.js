@@ -416,7 +416,7 @@ class jsonSchema extends React.Component {
                 >
                   {SCHEMA_TYPE.map((item, index) => {
                     return (
-                      <Option value={item} key={index}>
+                      <Option value={item} key={index} disabled={item !== 'object'}>
                         {item}
                       </Option>
                     );
