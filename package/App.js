@@ -442,7 +442,7 @@ class jsonSchema extends React.Component {
                 //       }
                 //     />
                 //   }
-                  placeholder={LocalProvider('cnname')}
+                  placeholder={"标题，可不填"}
                   value={this.props.schema.title}
                   onChange={e => this.changeValue(['title'], e.target.value)}
                 />
