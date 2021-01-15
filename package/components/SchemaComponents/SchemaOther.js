@@ -49,6 +49,7 @@ class SchemaString extends PureComponent {
   }
 
   changeOtherValue = (value, name, data) => {
+    console.log('value>>>', value, name, data);
     data[name] = value;
     this.context.changeCustomValue(data);
   };
