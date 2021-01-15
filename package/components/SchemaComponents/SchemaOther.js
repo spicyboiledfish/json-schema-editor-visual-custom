@@ -28,7 +28,12 @@ import LocalProvider from '../LocalProvider/index.js';
 
 const changeOtherValue = (value, name, data, change) => {
   console.log('查看', value, name, data, change);
-  data[name] = +value;
+  const { type } = data;
+  if (type === 'number' || type === 'integer') {
+    data[name] = +value;
+  } else {
+    data[name] = value;
+  }
   change(data);
 };
 
