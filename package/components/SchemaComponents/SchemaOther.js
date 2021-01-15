@@ -27,7 +27,8 @@ import AceEditor from '../AceEditor/AceEditor.js';
 import LocalProvider from '../LocalProvider/index.js';
 
 const changeOtherValue = (value, name, data, change) => {
-  data[name] = value;
+  console.log('vlaue....', value, name, data, change)
+  data[name] = +value;
   change(data);
 };
 
@@ -49,7 +50,6 @@ class SchemaString extends PureComponent {
   }
 
   changeOtherValue = (value, name, data) => {
-    console.log('value>>>', value, name, data);
     data[name] = value;
     this.context.changeCustomValue(data);
   };
